@@ -9,7 +9,7 @@ const image = require('./controllers/image');
 const apiCall = require('./controllers/apiCall');
 const knex = require('knex');
 
-const PORT = env.process.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const db = knex({
     client: 'pg',

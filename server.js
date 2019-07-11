@@ -32,7 +32,7 @@ app.use(cors());
 
 // home page
 app.get('/',(req,res) => {
-    res.send(db.users);
+    res.send('it is working!');
 });
 
 // user signin

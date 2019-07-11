@@ -9,6 +9,8 @@ const image = require('./controllers/image');
 const apiCall = require('./controllers/apiCall');
 const knex = require('knex');
 
+const PORT = env.process.PORT || 3000;
+
 const db = knex({
     client: 'pg',
     connection: {
@@ -47,8 +49,8 @@ app.put('/image', (req,res) => image.handleImage(req,res,db));
 
 app.post('/imageurl', (req,res) => apiCall.handleCall(req,res));
 
-app.listen(3000, () => {
-    console.log('WE are up and running!');
+app.listen(PORT, () => {
+    console.log(`app is running on port ${PORT}`);
 });
 
 /*
